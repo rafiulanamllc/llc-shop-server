@@ -1,5 +1,4 @@
 import express from "express";
-import serverless from "@vendia/serverless-express";
 const app = express();
 import "dotenv/config";
 import cors from "cors";
@@ -72,7 +71,6 @@ app.get("/", (req, res) => {
   res.send("You should not be here");
 });
 
-// app.listen(port, () => {
-//   console.log(`Server is running on ${port}`);
-// });
-export default serverless(app);
+app.listen(port, () => {
+  console.log(`Server is running on ${port}`);
+});
